@@ -119,7 +119,7 @@ termType | OfferTermCode | LeaseContractLength | OfferingClass | PurchaseOption
 reserved | VJWZNREJX2    | 1yr                 | convertible   | All Upfront
 reserved | 7NE97W5U4E    | 1yr                 | convertible   | No Upfront
 reserved | CUZHX8X6JH    | 1yr                 | convertible   | Partial Upfront
-rserved  | 6QCMYABX3D    | 1yr                 | standard      | All Upfront
+reserved | 6QCMYABX3D    | 1yr                 | standard      | All Upfront
 reserved | 4NA7Y494T4    | 1yr                 | standard      | No Upfront
 reserved | HU7G6KETJZ    | 1yr                 | standard      | Partial Upfront
 reserved | MZU6U2429S    | 3yr                 | convertible   | All Upfront
@@ -187,13 +187,12 @@ location        | Asia Pacific (Tokyo)
 
 offerTermCode:JRTCKXETXFでonDemandである事がわかる。
 
-### XXXXXXXXXXの6YS6EN2CT7から解ること
+### ？？？の6YS6EN2CT7から解ること
 
 6YS6EN2CT7の部分については特に呼称等が見当たらなかったので不明。
 本資料ではとりえずとして？？？と表記しています。
 
-rateCodeからは紐づくskuとoffertermCodeが単位量(時間や回数)辺りでいくらの単価かという事がわかります。
-この組み合わせ等はサービスや製品毎に異なっているようです。
+rateCodeからは紐づくskuとoffertermCodeが単位量(時間、容量、回数、等々)でいくらになるのかという単位価格が読み取れます。
 
 #### AmazonEC2サービスのtermTypeがonDemandeの場合
 
@@ -201,7 +200,7 @@ rateCodeからは紐づくskuとoffertermCodeが単位量(時間や回数)辺り
 
 下記のようになっているようです。
 
-rateCodeに示されている単価はHrs(時間単位)でbeginRangeが0でendRangeがInfinityという事で0からInfinityまで対象という事を表しています。
+rateCodeに示されている単位価格はHrs(時間単位)でbeginRangeが0でendRangeがInfinityという事で0からInfinityまで対象という事を表しています。
 
 ？？？     | unit | beginRange | endRanges
 ---------- | ---- | ---------- | ---------
@@ -211,7 +210,7 @@ rateCodeに示されている単価はHrs(時間単位)でbeginRangeが0でendRa
 
 2017年12月現在AmazonEC2サービスでregionがap-northeast-1(tokyo)でreservedの？？？の部分どのような物が存在するか観察してみると。
 下記のようになっており、2TG2D8R56UのUpfront Feeはリザーブド購入時の前払費用を意味しています。
-6YS6EN2CT7の意味合いについてはonDemandと同様。
+6YS6EN2CT7の意味合いについてはonDemandと同様。単位価格を表している。
 
 ？？？     | unit     | beginRange | endRange | description
 ---------- | -------- | ---------- | -------- | -----------
@@ -227,8 +226,8 @@ AmazonCloudSearchの下記に紐づくrateCodeを観察してみる。
 
 上記に紐づくrateCodeの？？？の部分は下記のようになっており。
 
-利用時間が0から750までは'26QEBRK9G26R9UG4.JRTCKXETXF.TKQXKGP374'のrateCode単価が適用。
-利用時間が750からInfinityまでは'26QEBRK9G26R9UG4.JRTCKXETXF.9GF73R9NUV'のrateCode単価が適用。
+利用時間が0から750までは`26QEBRK9G26R9UG4.JRTCKXETXF.TKQXKGP374`のrateCodeの単位価格が適用。
+利用時間が750からInfinityまでは`26QEBRK9G26R9UG4.JRTCKXETXF.9GF73R9NUV`のrateCodeの単位価格が適用。
 
 のような事がわかる。
 
